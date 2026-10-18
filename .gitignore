@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local database & cache
+database/*.db*
+*.db
+.project-brain/
+ytdl-info-cache/
+
