@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import Downloader from "@/components/Downloader";
-import Breadcrumbs from "@/components/Breadcrumbs";
 import StructuredData from "@/components/StructuredData";
 import RelatedTools from "@/components/RelatedTools";
 import { siteConfig } from "@/lib/seo-config";
@@ -23,12 +22,6 @@ export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
       <StructuredData type="homepage" canonicalPath="/" />
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "YouTube Video Downloader", href: "/" },
-        ]}
-      />
       <Downloader />
       <RelatedTools />
     </div>
