@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import Downloader from "@/components/Downloader";
-import Breadcrumbs from "@/components/Breadcrumbs";
 import StructuredData from "@/components/StructuredData";
 import RelatedTools from "@/components/RelatedTools";
 import { siteConfig } from "@/lib/seo-config";
@@ -58,12 +57,7 @@ export default function YouTubeToMp3Page() {
         ]}
         faqs={mp3Faqs}
       />
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "YouTube to MP3", href: "/youtube-to-mp3" },
-        ]}
-      />
+
       <Downloader
         initialKind="audio"
         title="YouTube to MP3 Converter"

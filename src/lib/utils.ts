@@ -13,20 +13,6 @@ export function getYouTubeId(url: string): string | null {
   return m ? m[1] : null;
 }
 
-const TIKTOK_REGEX =
-  /^(https?\:\/\/)?(www\.)?(tiktok\.com\/(@[A-Za-z0-9_.-]+\/video\/[0-9]+|t\/[A-Za-z0-9_-]+|v\/[0-9]+|embed\/[0-9]+)|vm\.tiktok\.com\/[A-Za-z0-9_-]+|vt\.tiktok\.com\/[A-Za-z0-9_-]+)(\S*)$/;
-
-export function isTikTokUrl(url: string): boolean {
-  return TIKTOK_REGEX.test(url);
-}
-
-/** Extracts the TikTok video ID from any supported TikTok URL form. */
-export function getTikTokId(url: string): string | null {
-  const m = url.match(
-    /tiktok\.com\/(?:@[A-Za-z0-9_.-]+\/video\/|t\/|v\/|embed\/)([0-9]+[A-Za-z0-9_-]*)|vm\.tiktok\.com\/([A-Za-z0-9_-]+)|vt\.tiktok\.com\/([A-Za-z0-9_-]+)/,
-  );
-  return m ? (m[1] ?? m[2] ?? m[3] ?? null) : null;
-}
 
 export function formatBytes(bytes: number): string {
   if (!bytes) return "Unknown size";

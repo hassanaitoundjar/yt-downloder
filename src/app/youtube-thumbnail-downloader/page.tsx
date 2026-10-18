@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import Downloader from "@/components/Downloader";
-import Breadcrumbs from "@/components/Breadcrumbs";
 import StructuredData from "@/components/StructuredData";
 import RelatedTools from "@/components/RelatedTools";
 import { siteConfig } from "@/lib/seo-config";
@@ -58,12 +57,7 @@ export default function YouTubeThumbnailPage() {
         ]}
         faqs={thumbnailFaqs}
       />
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "YouTube Thumbnail Downloader", href: "/youtube-thumbnail-downloader" },
-        ]}
-      />
+
       <Downloader
         initialKind="video"
         title="YouTube Thumbnail Downloader"

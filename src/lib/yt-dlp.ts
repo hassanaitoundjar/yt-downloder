@@ -72,7 +72,7 @@ export async function getVideoInfo(url: string): Promise<CachedInfo> {
   if (hit && hit.expires > Date.now()) return hit.value;
   if (hit) {
     cache.delete(key);
-    rm(hit.value.infoJsonPath, { force: true }).catch(() => {});
+    rm(hit.value.infoJsonPath, { force: true }).catch(() => { });
   }
 
   const pending = inflight.get(key);
