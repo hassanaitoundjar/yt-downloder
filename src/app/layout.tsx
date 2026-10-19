@@ -82,6 +82,8 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link rel="preconnect" href="https://i.ytimg.com" crossOrigin="" />
+        <link rel="dns-prefetch" href="https://i.ytimg.com" />
       </head>
       <body className="min-h-full flex flex-col antialiased text-slate-900 bg-white overflow-x-hidden">
         <Header />

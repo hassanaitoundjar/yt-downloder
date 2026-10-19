@@ -1,0 +1,47 @@
+# YTDL - Complete Technical Reference & Tool Manifest
+
+YTDL (https://yt-downloader.com) is an open web utility for extracting and saving public YouTube video, audio, and thumbnail media streams without installing third-party software, browser plugins, or executable programs.
+
+## Available Web Tools
+
+### 1. YouTube Video Downloader
+- URL: https://yt-downloader.com/
+- Description: Extract video streams from public YouTube videos.
+- Video Formats: MP4, WebM.
+- Resolutions: 4K (2160p), 1440p (2K), 1080p Full HD, 720p HD, 480p, 360p, 240p, 144p.
+- Video Codecs: H.264 (AVC1), VP9, AV1.
+- Features: Real-time remuxing with audio track preservation, fast chunk streaming, progress bar indicators.
+
+### 2. YouTube Shorts Downloader
+- URL: https://yt-downloader.com/youtube-shorts-downloader
+- Description: Fast downloader for vertical 9:16 aspect ratio YouTube Shorts.
+- Watermark Policy: Zero watermarks, zero overlays added.
+- Audio Quality: Preserves original stereo audio synchronized with the video.
+
+### 3. YouTube to MP3 Converter
+- URL: https://yt-downloader.com/youtube-to-mp3
+- Description: Audio extraction tool extracting the cleanest available audio tracks from any video.
+- Bitrates: 320kbps, 192kbps, 128kbps, 64kbps.
+- Formats: MP3, M4A (AAC), WebM (Opus).
+- Use Cases: Podcasts, background study audio, public domain music, lecture recordings.
+
+### 4. YouTube Thumbnail Grabber
+- URL: https://yt-downloader.com/youtube-thumbnail-downloader
+- Description: Extracts original source cover thumbnails from any video or Short.
+- Image Sizes: MaxResDefault (1920x1080), HQDefault (480x360), MQDefault (320x180), SDDefault (640x480).
+
+## Frequently Asked Questions (FAQ)
+
+### Is YTDL free?
+Yes. YTDL is completely free to use with no hidden fees, subscriptions, or daily limits.
+
+### Does YTDL store or log downloaded files?
+No. YTDL streams media directly to the user's browser in real time without storing or archiving content.
+
+### What devices are supported?
+YTDL is responsive and compatible with:
+- Apple iPhone and iPad (iOS / iPadOS Safari and Chrome)
+- Android smartphones and tablets (Google Chrome, Samsung Internet, Firefox)
+- Windows desktop & laptops (Chrome, Edge, Firefox)
+- macOS (Safari, Chrome, Arc)
+- Linux and Chromebooks

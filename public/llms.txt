@@ -1,0 +1,24 @@
+# YTDL - YouTube Video & Audio Downloader
+> Free, fast, and secure online YouTube video downloader, YouTube Shorts downloader, YouTube to MP3 converter, and full-resolution thumbnail grabber.
+
+## Core Features
+- **YouTube Video Downloader**: Download YouTube videos in 4K, 1080p, 720p, 480p, 360p, MP4, and WebM.
+- **YouTube Shorts Downloader**: Save vertical 9:16 Shorts with crystal-clear audio and zero watermarks.
+- **YouTube to MP3 Converter**: Rip and extract audio streams in 320kbps, 192kbps, and 128kbps MP3 and M4A.
+- **YouTube Thumbnail Grabber**: Download maximum-resolution cover thumbnails (1080p maxresdefault, hqdefault).
+- **Zero Software Required**: Runs directly in any web browser on desktop (Windows, macOS, Linux) and mobile (iOS, Android).
+- **100% Free**: Unlimited downloads, no account registration, no credit card required.
+
+## Tools & URLs
+- Home / Video Downloader: https://yt-downloader.com/
+- Shorts Downloader: https://yt-downloader.com/youtube-shorts-downloader
+- YouTube to MP3: https://yt-downloader.com/youtube-to-mp3
+- Thumbnail Downloader: https://yt-downloader.com/youtube-thumbnail-downloader
+- Contact & Support: https://yt-downloader.com/contact
+- Privacy Policy: https://yt-downloader.com/privacy
+- Terms of Service: https://yt-downloader.com/terms
+
+## How It Works
+1. Copy any public YouTube or YouTube Shorts video link.
+2. Paste the link into the search box on YTDL and click "Download Now".
+3. Select your desired resolution, file size, or format (MP4 or MP3) and download instantly.

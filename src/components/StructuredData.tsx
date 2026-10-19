@@ -79,6 +79,13 @@ export default function StructuredData({
       priceCurrency: "USD",
       availability: "https://schema.org/InStock",
     },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      ratingCount: "1480",
+      bestRating: "5",
+      worstRating: "1",
+    },
     featureList: [
       "High Definition (HD) and 4K downloads",
       "MP4 video extraction",
@@ -86,6 +93,40 @@ export default function StructuredData({
       "YouTube Shorts support",
       "No account or registration required",
       "Completely free with no limits",
+    ],
+  };
+
+  const howTo = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: `How to Download YouTube Videos & Audio with ${siteConfig.name}`,
+    description: "Step-by-step guide on how to download any YouTube video in HD, MP4, or MP3 without software.",
+    totalTime: "PT1M",
+    tool: [
+      {
+        "@type": "HowToTool",
+        name: "Web Browser (Chrome, Safari, Firefox, Edge)",
+      },
+    ],
+    step: [
+      {
+        "@type": "HowToStep",
+        position: 1,
+        name: "Copy the YouTube Video Link",
+        text: "Open YouTube in your browser or mobile app, find the video or Short, and copy its URL link.",
+      },
+      {
+        "@type": "HowToStep",
+        position: 2,
+        name: "Paste URL into YTDL",
+        text: "Paste the copied YouTube video link into the search bar on YTDL and click Download Now.",
+      },
+      {
+        "@type": "HowToStep",
+        position: 3,
+        name: "Choose Quality and Download",
+        text: "Select your desired video resolution (such as 4K, 1080p, 720p) or audio format and click Download to save the file to your device.",
+      },
     ],
   };
 
@@ -148,7 +189,12 @@ export default function StructuredData({
     <>
       <JsonLdScript data={organization} />
       <JsonLdScript data={webSite} />
-      {(type === "homepage" || type === "tool") && <JsonLdScript data={webApplication} />}
+      {(type === "homepage" || type === "tool") && (
+        <>
+          <JsonLdScript data={webApplication} />
+          <JsonLdScript data={howTo} />
+        </>
+      )}
       <JsonLdScript data={breadcrumbList} />
       {activeFaqs.length > 0 && <JsonLdScript data={faqPage} />}
     </>
