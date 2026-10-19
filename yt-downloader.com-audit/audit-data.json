@@ -1,0 +1,209 @@
+{
+  "summary": {
+    "health_score": 91,
+    "business_type": "Utility Web App / Multimedia SaaS",
+    "top_findings": [
+      "Missing security headers (CSP, HSTS, X-Content-Type-Options) in next.config.ts",
+      "Missing llms.txt and llms-full.txt files for AI Search / LLM crawler discovery",
+      "Preconnect to i.ytimg.com to optimize LCP on dynamic video thumbnail loading",
+      "Add HowTo structured schema for the 3-step download workflow to capture rich snippets",
+      "Explicitly configure AI crawlers (GPTBot, ClaudeBot, PerplexityBot) in robots.txt"
+    ],
+    "quick_wins": [
+      "Add security headers in next.config.ts (takes 5 mins)",
+      "Create public/llms.txt summarizing site tools for ChatGPT Search & Perplexity (takes 5 mins)",
+      "Add <link rel=\"preconnect\" href=\"https://i.ytimg.com\" /> in layout.tsx (takes 2 mins)",
+      "Add AggregateRating and HowTo schema in StructuredData.tsx (takes 10 mins)",
+      "Add MP4 vs WebM comparison guide on homepage to expand semantic keyword coverage (takes 15 mins)"
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 92,
+      "what_works": [
+        "Clean dynamic XML sitemap at /sitemap.xml with daily/weekly change frequencies",
+        "Proper robots.txt with disallow for /api/ and clear sitemap reference",
+        "Self-referencing canonical links on every page to prevent duplicate content",
+        "Zero crawl errors (all 7 core routes prerendered with HTTP 200 OK)",
+        "Mobile viewport tag configured properly"
+      ],
+      "findings": [
+        {
+          "title": "Missing HTTP Security Headers",
+          "severity": "Medium",
+          "description": "next.config.ts does not send X-Frame-Options, X-Content-Type-Options, or Referrer-Policy headers.",
+          "recommendation": "Add a headers() block in next.config.ts returning secure default headers."
+        },
+        {
+          "title": "IndexNow Protocol Not Implemented",
+          "severity": "Low",
+          "description": "Bing and Yandex IndexNow protocol is not integrated for instant URL notification upon release.",
+          "recommendation": "Add /api/indexnow endpoint or static API key file for instant indexing notification."
+        }
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "score": 94,
+      "what_works": [
+        "Unique, keyword-focused title tags within 50-60 character limits",
+        "Compelling meta descriptions for all pages satisfying user search intent",
+        "Single H1 tag per page hierarchy followed by structured H2/H3 headings",
+        "OpenGraph and Twitter Card metadata configured across all pages",
+        "Internal cross-linking between all downloader tools via Header, Footer, and RelatedTools"
+      ],
+      "findings": [
+        {
+          "title": "Homepage Deep Content Expansion",
+          "severity": "Medium",
+          "description": "While tool pages have explanatory sections, homepage can benefit from a detailed format comparison section.",
+          "recommendation": "Add a comparison table on the homepage for video and audio formats."
+        }
+      ]
+    },
+    {
+      "name": "Content Quality & E-E-A-T",
+      "score": 88,
+      "what_works": [
+        "Direct utility above-the-fold without intrusive ads, paywalls, or forced logins",
+        "Comprehensive, tool-specific FAQ accordions answering common user questions",
+        "Dedicated transparency and trust pages (/privacy, /terms, /contact)",
+        "Clear copyright and trademark disclaimers acknowledging YouTube's trademarks"
+      ],
+      "findings": [
+        {
+          "title": "Editorial Experience & Verification Signals",
+          "severity": "Low",
+          "description": "Content lacks explicit author or testing team credentials (e.g., 'Tested by our media engineering team').",
+          "recommendation": "Add an about/engineering trust badge detailing yt-dlp version tracking and format verification."
+        }
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "score": 95,
+      "what_works": [
+        "WebApplication schema with MultimediaApplication category and $0 free offer",
+        "Organization and WebSite schema integrated with official logo and contact point",
+        "BreadcrumbList schema on all pages",
+        "FAQPage schema correctly mirroring visible FAQs on each tool page",
+        "XSS protection escaping HTML characters in JSON-LD payloads"
+      ],
+      "findings": [
+        {
+          "title": "HowTo Schema Opportunity",
+          "severity": "Medium",
+          "description": "The 3-step 'From URL to download in seconds' is prime candidate for Google HowTo rich snippets.",
+          "recommendation": "Add HowTo JSON-LD schema to StructuredData.tsx."
+        },
+        {
+          "title": "AggregateRating on WebApplication",
+          "severity": "Low",
+          "description": "WebApplication schema does not include user satisfaction rating.",
+          "recommendation": "Add aggregateRating object with ratingValue and reviewCount."
+        }
+      ]
+    },
+    {
+      "name": "Performance (CWV)",
+      "score": 92,
+      "what_works": [
+        "Turbopack-optimized static rendering with zero heavy runtime UI libraries",
+        "Next.js Inter font subsetting and Google Fonts preconnecting",
+        "Lazy loaded thumbnails and clean SVG icons",
+        "Clean client bundle with zero unnecessary dependencies"
+      ],
+      "findings": [
+        {
+          "title": "Preconnect to YouTube Thumbnail CDN",
+          "severity": "Low",
+          "description": "Dynamic thumbnails load from i.ytimg.com. Preconnecting reduces handshake latency.",
+          "recommendation": "Add <link rel=\"preconnect\" href=\"https://i.ytimg.com\" /> to root layout."
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness (GEO)",
+      "score": 82,
+      "what_works": [
+        "High information density with concise definitions, bullet points, and Q&A",
+        "Semantic HTML5 tags throughout layout (<header>, <nav>, <main>, <section>, <footer>)"
+      ],
+      "findings": [
+        {
+          "title": "Missing llms.txt and llms-full.txt",
+          "severity": "High",
+          "description": "AI engines (ChatGPT Search, Perplexity, Claude) index llms.txt for structured tool understanding.",
+          "recommendation": "Create public/llms.txt and public/llms-full.txt with clear markdown documentation of all tools."
+        },
+        {
+          "title": "Explicit AI Crawler Permissions",
+          "severity": "Medium",
+          "description": "robots.txt allows all crawlers via '*', but explicitly declaring GPTBot and ClaudeBot boosts crawl rate.",
+          "recommendation": "Add explicit allow rules for GPTBot, ClaudeBot, and PerplexityBot in robots.ts."
+        }
+      ]
+    },
+    {
+      "name": "Images & Assets",
+      "score": 90,
+      "what_works": [
+        "Standard multi-resolution icons (192x192, 512x512, apple-touch-icon)",
+        "site.webmanifest for PWA and mobile bookmarking",
+        "Dynamic alt tags on fetched video thumbnails"
+      ],
+      "findings": [
+        {
+          "title": "High-Resolution OG Image",
+          "severity": "Low",
+          "description": "Current og-image.png is basic. A dedicated 1200x630 banner improves CTR in social shares.",
+          "recommendation": "Generate an eye-catching 1200x630 branded card."
+        }
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1: Quick Wins & AI Search Setup",
+        "timeframe": "Day 1-2",
+        "items": [
+          "Create public/llms.txt for AI Search and LLM citability",
+          "Add security headers in next.config.ts",
+          "Add i.ytimg.com preconnect in layout.tsx",
+          "Explicitly configure GPTBot & ClaudeBot in robots.ts"
+        ]
+      },
+      {
+        "name": "Phase 2: Schema Enhancements",
+        "timeframe": "Week 1",
+        "items": [
+          "Add HowTo schema for 3-step download process",
+          "Add AggregateRating to WebApplication schema"
+        ]
+      },
+      {
+        "name": "Phase 3: Content Depth Expansion",
+        "timeframe": "Week 2",
+        "items": [
+          "Add comprehensive format guide table on homepage",
+          "Add editorial engineering badges for trust & E-E-A-T"
+        ]
+      },
+      {
+        "name": "Phase 4: Monitoring & Off-Page Growth",
+        "timeframe": "Ongoing",
+        "items": [
+          "Connect Google Search Console and Bing Webmaster Tools",
+          "Monitor Core Web Vitals field data in CrUX",
+          "Track keyword rankings for high-intent search terms"
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "screenshots_dir": "screenshots/"
+  }
+}
