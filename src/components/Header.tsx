@@ -150,63 +150,73 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile Dropdown Menu */}
+        {/* Mobile Dropdown Menu & Backdrop */}
         {mobileMenuOpen && (
-          <div
-            id="mobile-menu"
-            className="lg:hidden border-b border-slate-200 bg-white px-4 pt-3 pb-6 shadow-xl space-y-2 animate-in fade-in slide-in-from-top-2 duration-150"
-          >
-            <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 px-3 py-1">
-              Download Tools
-            </div>
-            <div className="space-y-1">
-              {navLinks.map((link) => {
-                const active = isActive(link.href);
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    aria-current={active ? "page" : undefined}
-                    className={`block px-3.5 py-2.5 rounded-xl text-sm font-medium transition ${
-                      active
-                        ? "text-red-600 bg-red-50 font-bold"
-                        : "text-slate-700 hover:bg-slate-100"
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                );
-              })}
-            </div>
+          <>
+            <div
+              className="fixed inset-0 top-16 bg-slate-900/30 backdrop-blur-xs z-30 lg:hidden"
+              onClick={() => setMobileMenuOpen(false)}
+              aria-hidden="true"
+            />
+            <div
+              id="mobile-menu"
+              className="relative z-40 lg:hidden border-b border-slate-200 bg-white px-4 pt-3 pb-6 shadow-2xl space-y-2 animate-in fade-in slide-in-from-top-2 duration-150"
+            >
+              <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 px-3 py-1">
+                Download Tools
+              </div>
+              <div className="space-y-1">
+                {navLinks.map((link) => {
+                  const active = isActive(link.href);
+                  return (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      aria-current={active ? "page" : undefined}
+                      className={`block px-3.5 py-2.5 rounded-xl text-sm font-semibold transition min-h-[44px] flex items-center ${
+                        active
+                          ? "text-red-600 bg-red-50"
+                          : "text-slate-700 hover:bg-slate-100"
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  );
+                })}
+              </div>
 
-            <div className="pt-3 border-t border-slate-100 space-y-1">
-              <Link
-                href="/#history"
-                className="flex items-center gap-2 px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-100"
-              >
-                <svg
-                  className="w-4 h-4 text-slate-500"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+              <div className="pt-3 border-t border-slate-100 space-y-1">
+                <Link
+                  href="/#history"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-2 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-100 min-h-[44px]"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-                Download History
-              </Link>
-              <Link
-                href="/contact"
-                className="block px-3.5 py-2 rounded-xl text-sm font-medium text-slate-500 hover:text-slate-900"
-              >
-                Contact Support
-              </Link>
+                  <svg
+                    className="w-4 h-4 text-slate-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  Download History
+                </Link>
+                <Link
+                  href="/contact"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-500 hover:text-slate-900 min-h-[44px] flex items-center"
+                >
+                  Contact Support
+                </Link>
+              </div>
             </div>
-          </div>
+          </>
         )}
       </header>
     </>

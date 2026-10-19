@@ -83,7 +83,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
       </head>
-      <body className="min-h-full flex flex-col antialiased text-slate-900 bg-white">
+      <body className="min-h-full flex flex-col antialiased text-slate-900 bg-white overflow-x-hidden">
         <Header />
         <main id="main-content" className="flex-1 flex flex-col">
           {children}
